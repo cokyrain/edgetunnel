@@ -20,14 +20,14 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: "16"
+          node-version: "20"
 
       - name: Install dependencies
         run: npm install -g javascript-obfuscator
 
       - name: Obfuscate code
         run: |
-          javascript-obfuscator _worker.js --output worker.js \
+          javascript-obfuscator _worker.js --output _worker.txt \
           --compact true \
           --control-flow-flattening true \
           --control-flow-flattening-threshold 1 \
